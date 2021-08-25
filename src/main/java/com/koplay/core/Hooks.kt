@@ -57,10 +57,10 @@ class Hooks {
 
     }
 
-    @After
+    @After(order = 0)
     fun afterScenario(scenario: Scenario) {
         log.info("Closing the Driver: ${browsers.name} running: ${mode.name}")
-        DriverManager.getDriver().close()
+        DriverManager.closeDriver()
     }
 
 }

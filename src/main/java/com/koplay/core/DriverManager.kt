@@ -19,5 +19,11 @@ class DriverManager {
         fun setDriver(driver: Browser) {
             DriverManager.driver.set(driver)
         }
+
+        fun closeDriver() {
+            if (driver.get() != null) {
+                driver.get().close()
+            }
+        }
     }
 }
